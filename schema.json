@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-json2csv",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-json2csv"
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "required": ["id", "outputPath"],
+      "oneOf": [{ "required": ["input"] }, { "required": ["inputPath"] }],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        },
+        "inputPath": {
+          "type": "string"
+        },
+        "outputPath": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "fields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "defaultValue": {
+              "type": "string"
+            },
+            "header": {
+              "type": "boolean"
+            },
+            "escapedQuote": {
+              "type": "string"
+            },
+            "delimiter": {
+              "type": "string"
+            },
+            "eol": {
+              "type": "string"
+            },
+            "excelStrings": {
+              "type": "boolean"
+            },
+            "includeEmptyRows": {
+              "type": "boolean"
+            },
+            "withBOM": {
+              "type": "boolean"
+            }
+          }
+        },
+        "transforms": {
+          "type": "object",
+          "properties": {
+            "unwind": {
+              "type": "object",
+              "items": {
+                "paths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "blankOut": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "flatten": {
+              "type": "object",
+              "items": {
+                "objects": {
+                  "type": "boolean"
+                },
+                "arrays": {
+                  "type": "boolean"
+                },
+                "separator": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
