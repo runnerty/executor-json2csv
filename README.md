@@ -12,6 +12,11 @@
 
 # Executor for [Runnerty]: JSON2CSV
 
+### Installation:
+```bash
+npm i @runnerty/executor-json2csv
+```
+
 ### Configuration sample:
 ```json
 {
