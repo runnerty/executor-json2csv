@@ -6,9 +6,9 @@ const {
   transforms: { unwind, flatten }
 } = require('json2csv');
 
-const Execution = global.ExecutionClass;
+const Executor = require('@runnerty/module-core').Executor;
 
-class json2csvExecutor extends Execution {
+class json2csvExecutor extends Executor {
   constructor(process) {
     super(process);
     this.endOptions = { end: 'end' };
@@ -48,7 +48,7 @@ class json2csvExecutor extends Execution {
       this.endOptions.end = 'error';
       this.endOptions.messageLog = err;
       this.endOptions.err_output = err;
-      this.end(endOptions);
+      this.end(this.endOptions);
     }
   }
 }

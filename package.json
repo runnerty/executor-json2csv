@@ -1,6 +1,6 @@
 {
   "name": "@runnerty/executor-json2csv",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Runnerty module: JSON2CSV executor",
   "author": "Coderty",
   "license": "MIT",
@@ -25,13 +25,14 @@
   },
   "homepage": "https://github.com/runnerty/executor-json2csv#readme",
   "dependencies": {
-    "json2csv": "5.0.3",
-    "string-to-stream": "^3.0.1"
+    "@runnerty/module-core": "~3.0.5",
+    "json2csv": "~5.0.6",
+    "string-to-stream": "~3.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   }
 }
