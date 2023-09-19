@@ -1,10 +1,8 @@
 'use strict';
 const { createReadStream, createWriteStream } = require('fs');
 const strStream = require('string-to-stream');
-const {
-  AsyncParser,
-  transforms: { unwind, flatten }
-} = require('json2csv');
+const { unwind, flatten } = require('@json2csv/transforms');
+const { AsyncParser } = require('@json2csv/node');
 
 const Executor = require('@runnerty/module-core').Executor;
 
@@ -39,10 +37,9 @@ class json2csvExecutor extends Executor {
 
     const output = createWriteStream(outputPath, { encoding: 'utf8' });
     const asyncParser = new AsyncParser(opts);
-    const parsingProcessor = asyncParser.fromInput(input).toOutput(output);
 
     try {
-      await parsingProcessor.promise();
+      asyncParser.parse(input).pipe(output);
       this.end(this.endOptions);
     } catch (err) {
       this.endOptions.end = 'error';
