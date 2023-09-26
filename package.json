@@ -25,14 +25,16 @@
   },
   "homepage": "https://github.com/runnerty/executor-json2csv#readme",
   "dependencies": {
+    "@json2csv/node": "^7.0.3",
+    "@json2csv/plainjs": "^7.0.3",
+    "@json2csv/transforms": "^7.0.3",
     "@runnerty/module-core": "~3.1.1",
-    "json2csv": "~5.0.7",
     "string-to-stream": "~3.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.14.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2"
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
   }
 }
